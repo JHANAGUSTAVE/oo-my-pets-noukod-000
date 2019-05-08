@@ -66,13 +66,12 @@ class Owner
     "I have #{pets[:fishes].length} fish, #{pets[:dogs].length} dog(s), and #{pets[:cats].length} cat(s)."
   end
 
-  def sell_pets
-    pets.each do |pet, arr|
-      arr.map do |pet|
+ def sell_pets
+    @pets.collect do |species, instances|
+      instances.each do |pet|
         pet.mood = "nervous"
-        
       end
-      arr.clear
+      instances.clear
     end
   end
 
